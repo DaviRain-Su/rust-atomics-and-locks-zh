@@ -13,3 +13,6 @@
 - [Chapter 8](./chapter_8.md)
 - [Chapter 9](./chapter_9.md)
 - [Chapter 10](./chapter_10.md)
+- [index](./index.md)
+- [about author](./about-author.md)
+- [Colophon](./colophon.md)

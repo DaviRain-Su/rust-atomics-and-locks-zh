@@ -395,6 +395,7 @@ Borrowing something with `&mut` gives a mutable reference. A mutable borrow guar
 These two concepts together fully prevent data races: situations where one thread is mutating data while another is concurrently accessing it. Data races are generally undefined behavior, which means the compiler does not need to take these situations into account. It will simply assume they do not happen.
 
 To clarify what that means, let’s take a look at an example where the compiler can make a useful assumption using the borrowing rules:
+
 ```rust
 fn f(a: &i32, b: &mut i32) {
     let before = *a;
@@ -405,6 +406,7 @@ fn f(a: &i32, b: &mut i32) {
     }
 }
 ```
+
 Here, we get an immutable reference to an integer, and store the value of the integer both before and after incrementing the integer that `b` refers to. The compiler is free to assume that the fundamental rules about borrowing and data races are upheld, which means that `b` can’t possibly refer to the same integer as `a` does. In fact, nothing in the entire program can mutably borrow the integer that a refers to as long as `a` is borrowing it. Therefore, the compiler can easily conclude that `*a` will not change and the condition of the `if` statement will never be true, and can completely remove the call to `x` from the program as an optimization.
 
 It’s impossible to write a Rust program that breaks the compiler’s assumptions, other than by using an `unsafe` block to disable some of the compiler’s safety checks.

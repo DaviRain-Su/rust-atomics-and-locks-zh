@@ -1,0 +1,3 @@
+# About author
+
+Mara Bos maintains the Rust standard library and builds real-time control systems in Rust. As team lead of the Rust library team, she knows all the ins and outs of the language and the standard library. In addition, she has been working with concurrent real-time systems for years at the company she founded. Maintaining the most-used library in the Rust ecosystem and working daily on safety critical systems has given her the hands-on experience to both understand the theory and bring it to practice.
